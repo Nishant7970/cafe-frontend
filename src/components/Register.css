@@ -1,0 +1,221 @@
+/* Register.css */
+
+/* Base Styles */
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+}
+
+/* Container */
+.register-container {
+  background: rgba(255, 253, 250, 0.95);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(210, 180, 140, 0.3);
+  animation: fadeIn 0.8s ease;
+}
+
+/* Header */
+.register-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.register-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4e342e;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+}
+
+.register-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, #d7ccc8, #8d6e63);
+  margin: 0.8rem auto;
+  border-radius: 2px;
+}
+
+/* Form */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #5d4037;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d7ccc8;
+  border-radius: 0.75rem;
+  background-color: #fff8f2;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #3e2723;
+}
+
+.form-input:focus {
+  border-color: #8d6e63;
+  box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.3);
+  outline: none;
+}
+
+/* Error Message */
+.error-message {
+  background-color: #ffebee;
+  border-left: 5px solid #d32f2f;
+  color: #b71c1c;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  animation: shake 0.5s ease;
+}
+
+/* Button */
+.register-button {
+  background: linear-gradient(135deg, #8d6e63, #5d4037);
+  color: white;
+  padding: 0.8rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(93, 64, 55, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.register-button:hover {
+  background: linear-gradient(135deg, #7d5e53, #4d3027);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(93, 64, 55, 0.4);
+}
+
+.register-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.register-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%);
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.register-button:hover::after {
+  transform: scale(1);
+}
+
+/* Footer */
+.register-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #5d4037;
+}
+
+.register-footer a {
+  color: #8d6e63;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.register-footer a:hover {
+  color: #5d4037;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 2rem;
+  }
+  
+  .register-title {
+    font-size: 1.8rem;
+  }
+}
+/* Add these to your existing Register.css */
+
+.register-subtitle {
+  color: #6d4c41;
+  font-size: 1rem;
+}
+
+.button-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

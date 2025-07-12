@@ -1,0 +1,308 @@
+/* Cafe Login Page CSS */
+
+/* Base Styles */
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  animation: fadeInBackground 1.5s ease;
+}
+
+/* Container with coffee stain effect */
+.login-container {
+  background: rgba(255, 253, 250, 0.95);
+  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 2px #e4d5c7;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.8s ease;
+}
+
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23d7ccc8" opacity="0.3" d="M50,10c20,0,40,30,40,50s-20,30-40,30S10,80,10,60S30,10,50,10z"/></svg>') no-repeat;
+  background-size: contain;
+  z-index: 0;
+}
+
+/* Title & Subtitle */
+.login-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4e342e;
+  margin-bottom: 0.5rem;
+  position: relative;
+  font-family: 'Playfair Display', serif;
+}
+
+.login-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #d7ccc8, #8d6e63, #d7ccc8);
+  margin: 0.8rem auto;
+  border-radius: 3px;
+}
+
+.login-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #6d4c41;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+/* Input group with coffee cup icon */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #fff8f2;
+  border: 1px solid #d7ccc8;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.input-group:hover {
+  border-color: #a1887f;
+  box-shadow: 0 5px 15px rgba(161, 136, 127, 0.1);
+}
+
+.input-icon {
+  font-size: 1.2rem;
+  color: #8d6e63;
+  margin-right: 0.75rem;
+}
+
+input[type="email"],
+input[type="password"] {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 1rem;
+  color: #3e2723;
+  font-family: 'Poppins', sans-serif;
+}
+
+input::placeholder {
+  color: #bcaaa4;
+  font-style: italic;
+}
+
+/* Remember & forgot */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  font-size: 0.9rem;
+  color: #6d4c41;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #a1887f;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox:checked {
+  background-color: #6d4c41;
+}
+
+.checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 0.8rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.remember-forgot a {
+  color: #8d6e63;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.remember-forgot a:hover {
+  color: #5d4037;
+  text-decoration: underline;
+}
+
+/* Button styled like a coffee bean */
+.login-button {
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #6d4c41, #4e342e);
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 5px 15px rgba(110, 76, 65, 0.3);
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #5d4037, #3e2723);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(110, 76, 65, 0.4);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+.login-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.login-button:hover::after {
+  transform: scale(1);
+}
+
+/* Error message */
+.error-alert {
+  background-color: #ffebee;
+  border-left: 5px solid #d32f2f;
+  color: #b71c1c;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  animation: shake 0.5s ease;
+}
+
+/* Footer with decorative elements */
+.login-footer {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #5d4037;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.login-footer::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d7ccc8, transparent);
+  margin-bottom: 1.5rem;
+}
+
+.login-footer a {
+  color: #795548;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.login-footer a:hover {
+  color: #4e342e;
+}
+
+.login-footer a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #4e342e;
+  transition: width 0.3s ease;
+}
+
+.login-footer a:hover::after {
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeInBackground {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  .login-title {
+    font-size: 1.8rem;
+  }
+  
+  .login-container::before {
+    display: none;
+  }
+}
