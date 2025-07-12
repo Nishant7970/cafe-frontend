@@ -24,7 +24,7 @@ const Admin = () => {
   const fetchProducts = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://localhost:8080/api/product', {
+      const response = await axios.get('https://cafe-backend-2-7npo.onrender.com/api/product', {
         headers: {
           Authorization: localStorage.getItem('token')
         }

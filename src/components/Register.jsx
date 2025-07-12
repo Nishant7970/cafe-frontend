@@ -35,7 +35,7 @@ const Register = () => {
 
     try {
       const { confirmPassword, ...userData } = formData;
-      await axios.post("http://localhost:8080/api/users/register", userData);
+      await axios.post("https://cafe-backend-2-7npo.onrender.com/api/users/register", userData);
       navigate('/login');
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed. Please try again.');
@@ -49,7 +49,7 @@ const Register = () => {
       <div className="register-container">
         <div className="text-center mb-6">
           <FaCoffee className="text-4xl text-amber-600 mx-auto mb-3 animate-pulse" />
-          <h1 className="register-title">Café Desi Byte</h1>
+          <h1 className="register-title">𝐍𝐢𝐬𝐡𝐂𝐚𝐟𝐞</h1>
           <p className="register-subtitle">Join our coffee community</p>
         </div>
 

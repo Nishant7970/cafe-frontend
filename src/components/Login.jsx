@@ -27,7 +27,7 @@ const LoginComponent = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/api/users/login', formData);
+      const response = await axios.post('https://cafe-backend-2-7npo.onrender.com/api/users/login', formData);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify({
         name: response.data.name,
@@ -45,7 +45,7 @@ const LoginComponent = () => {
   return (
     <div className="login-page">
       <div className="login-container">
-        <h2 className="login-title">☕ Café Login</h2>
+        <h2 className="login-title">☕ 𝐍𝐢𝐬𝐡𝐂𝐚𝐟𝐞</h2>
         <p className="login-subtitle">Welcome back! Please enter your credentials.</p>
 
         {error && <div className="error-alert">{error}</div>}
