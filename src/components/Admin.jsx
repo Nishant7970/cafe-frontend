@@ -401,7 +401,7 @@ const Admin = () => {
                         </span>
                       </td>
                       <td className="product-price">
-                        ${product.price.toFixed(2)}
+                        ₹{product.price.toFixed(2)}
                       </td>
                       <td className="product-stock">
                         <div className="stock-controls">
