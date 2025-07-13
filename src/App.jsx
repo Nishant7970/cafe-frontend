@@ -7,6 +7,7 @@ import UserProfile from './components/UserProfile';
 import UserList from './components/UserList';
 import Admin from './components/Admin';
 import Home from './components/Home';
+import OrderPage from './components/OrderPage';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/profile/:id" element={<UserProfile />} />
         <Route path="/users" element={<UserList />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/order/:productId" element={<OrderPage />} />
       </Routes>
     </Router>
   );
