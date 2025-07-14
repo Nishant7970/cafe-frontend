@@ -71,6 +71,14 @@ const Admin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Form data:', {
+  name: formData.name,
+  description: formData.description,
+  price: formData.price,
+  category: formData.category,
+  stock: formData.stock,
+  image: formData.image
+});
     setIsLoading(true);
     setError('');
     setSuccess('');
