@@ -10,7 +10,7 @@ const Home = () => {
 
   const fetchProducts = async () => {
     try {
-      let res = await axios.get("https://cafe-backend-2-7npo.onrender.com/api/product", {
+      let res = await axios.get("http://localhost:8080/api/product", {
         headers: {
           Authorization: localStorage.getItem("token")
         }

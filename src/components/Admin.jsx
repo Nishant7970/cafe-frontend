@@ -24,7 +24,7 @@ const Admin = () => {
   const fetchProducts = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('https://cafe-backend-2-7npo.onrender.com/api/product', {
+      const response = await axios.get('http://localhost:8080/api/product', {
         headers: {
           Authorization: localStorage.getItem('token')
         }
@@ -102,10 +102,10 @@ const Admin = () => {
       }
 
       if (editingId) {
-        await axios.put(`https://cafe-backend-2-7npo.onrender.com/api/product/${editingId}`, formDataToSend, config);
+        await axios.put(`http://localhost:8080/api/product/${editingId}`, formDataToSend, config);
         setSuccess('Product updated successfully!');
       } else {
-        await axios.post('https://cafe-backend-2-7npo.onrender.com/api/product', formDataToSend, config);
+        await axios.post('http://localhost:8080/api/product', formDataToSend, config);
         setSuccess('Product added successfully!');
       }
       await fetchProducts();
@@ -150,7 +150,7 @@ const Admin = () => {
       setIsLoading(true);
       setError('');
       try {
-        await axios.delete(`https://cafe-backend-2-7npo.onrender.com/api/product/${id}`, {
+        await axios.delete(`http://localhost:8080/api/product/${id}`, {
           headers: {
             Authorization: localStorage.getItem('token')
           }
@@ -171,7 +171,7 @@ const Admin = () => {
     setError('');
     try {
       await axios.put(
-        `https://cafe-backend-2-7npo.onrender.com/api/product/${id}`,
+        `http://localhost:8080/api/product/${id}`,
         { action },
         {
           headers: {

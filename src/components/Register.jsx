@@ -35,7 +35,7 @@ const Register = () => {
 
     try {
       const { confirmPassword, ...userData } = formData;
-      await axios.post("https://cafe-backend-2-7npo.onrender.com/api/users/register", userData);
+      await axios.post("http://localhost:8080/api/users/register", userData);
       navigate('/login');
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed. Please try again.');
